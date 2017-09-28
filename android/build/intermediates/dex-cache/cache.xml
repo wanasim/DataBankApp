@@ -183,6 +183,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/nardos/Documents/DataBankApp/android/app/build/intermediates/exploded-aar/DataBankApp/react-native-linear-gradient/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="b1de8f75805268154da5e88bb6195760b9d8966f">
+        <dex dex="/Users/nardos/Documents/DataBankApp/android/app/build/intermediates/pre-dexed/debug/DataBankApp-react-native-linear-gradient-unspecified_5558ba503dc3d3ba97ee78dea2d5a761f6944049.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/nardos/Documents/DataBankApp/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
         jumboMode="false"
         optimize="true"
