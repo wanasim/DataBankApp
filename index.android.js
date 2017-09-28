@@ -9,23 +9,30 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View, 
+  Image
 } from 'react-native';
 
 export default class DataBankApp extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
+        <Image
+         style={{width: 411, height: 250}}
+         source={require('./assets/header_background.png')} 
+         >
+            <Text style={styles.country}>
+                INDIA
+            </Text>
+
+            <Text style={styles.subtext}>
+                POPULATION
+            </Text>
+
+            <Text style={styles.subtextNumber}>
+                1.324B
+            </Text>
+        </Image>
       </View>
     );
   }
@@ -34,14 +41,32 @@ export default class DataBankApp extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#FBF7F8',
   },
-  welcome: {
-    fontSize: 20,
+  country: {
+    marginTop:20,
+    fontSize: 25,
     textAlign: 'center',
-    margin: 10,
+    color:'#ffffff',
+    fontFamily:'Montserrat-Regular',
+    letterSpacing: 2,
+
+  },
+  subtext: {
+    marginTop:30,
+    fontSize: 14,
+    textAlign: 'center',
+    color:'#ffffff',
+    fontFamily:'Montserrat-Light',
+    letterSpacing: 2,
+  },
+  subtextNumber: {
+    fontSize: 40,
+    textAlign: 'center',
+    color:'#ffffff',
+    fontFamily:'Montserrat-Bold',
+    letterSpacing: 2,
+
   },
   instructions: {
     textAlign: 'center',
