@@ -15,7 +15,7 @@ export default class SliderEntry extends Component {
     get image () {
         const { data: { illustration }, parallax, parallaxProps, even } = this.props;
 
-        return (
+        return parallax ? (
             <ParallaxImage
               source={{ uri: illustration }}
               containerStyle={[styles.imageContainer, even ? styles.imageContainerEven : {}]}
@@ -25,8 +25,13 @@ export default class SliderEntry extends Component {
               spinnerColor={even ? 'rgba(255, 255, 255, 0.4)' : 'rgba(0, 0, 0, 0.25)'}
               {...parallaxProps}
             />
-        )
-    }
+        ) : (
+            <Image
+              source={{ uri: illustration }}
+              style={styles.image}
+            />
+        );
+}
 
     render () {
         const { data: { title, subtitle }, even } = this.props;

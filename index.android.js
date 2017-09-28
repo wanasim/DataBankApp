@@ -2,117 +2,15 @@
  * Sample React Native App
  * https://github.com/facebook/react-native
  * @flow
-
-
-import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View, 
-  Image
-} from 'react-native';
-import Carousel from 'react-native-snap-carousel';
-
-export default class DataBankApp extends Component {
-
-
-  _renderItem ({item, index}) {
-        return (
-            <View style={styles.slide}>
-                <Text style={styles.title}>{ item.title }</Text>
-            </View>
-        );
-    }
-
-
-
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <Image
-          style={{flex: 1,
-          alignSelf: 'stretch',
-          width: undefined,
-          height: undefined}}
-          source={require('./assets/header_background.png')} 
-         >
-            <Text style={styles.country}>
-                INDIA
-            </Text>
-
-            <Text style={styles.subtext}>
-                POPULATION
-            </Text>
-
-            <Text style={styles.subtextNumber}>
-                1.324B
-            </Text>
-
-            <Text style={styles.subtextSmallText}>
-               GDP: $1,709.39                 |                  GNI: $1,680        
-            </Text>
-        </Image>
-
-        <View style={{flex:1.7}}>
-        </View>
-      </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#FBF7F8',
-  },
-  country: {
-    marginTop:20,
-    fontSize: 25,
-    textAlign: 'center',
-    color:'#ffffff',
-    fontFamily:'Montserrat-Regular',
-    letterSpacing: 2,
-
-  },
-  subtext: {
-    marginTop:40,
-    fontSize: 14,
-    textAlign: 'center',
-    color:'#ffffff',
-    fontFamily:'Montserrat-Medium',
-    letterSpacing: 2,
-  },
-  subtextNumber: {
-    marginTop:-10,
-    fontSize: 45,
-    textAlign: 'center',
-    color:'#ffffff',
-    fontFamily:'Montserrat-Bold',
-    letterSpacing: 2,
-  },
-  subtextSmallText: {
-    marginTop:25,
-    fontSize: 12,
-    textAlign: 'center',
-    color:'#ffffff',
-    fontFamily:'Montserrat-Medium',
-    letterSpacing: 2,
-
-  }
-});
- */
+*/
 
 import React, { Component } from 'react';
-import { View, ScrollView, Text, StatusBar, Platform, Dimensions,AppRegistry } from 'react-native';
+import { View, ScrollView, Text, StatusBar, Platform, Dimensions,AppRegistry, Image, StyleSheet } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 import SliderEntry from './src/components/SliderEntry';
-import styles from './src/styles/index.style';
 import { ENTRIES1 } from './src/static/entries';
-
-
+import styles from './src/styles/index.style';
 
 
 
@@ -127,11 +25,13 @@ const slideHeight = viewportHeight * 0.4;
 const slideWidth = wp(75);
 const itemHorizontalMargin = wp(2);
 
-const SLIDER_1_FIRST_ITEM = 0;
+const SLIDER_1_FIRST_ITEM = 2;
 const sliderWidth = viewportWidth;
-const itemWidth = slideWidth + itemHorizontalMargin * 2;
+const itemWidth = slideWidth + itemHorizontalMargin * 1;
+
 
 export default class DataBankApp extends Component {
+
 
     constructor (props) {
         super(props);
@@ -143,10 +43,17 @@ export default class DataBankApp extends Component {
 
     _renderItem ({item, index}) {
         return (
-            <SliderEntry
-              data={item}
-              even={(index + 1) % 2 === 0}
-            />
+            <View
+              style={{flex: 1,
+                backgroundColor:'#ffffff',
+              justifyContent: 'center',
+              alignItems: 'center',
+              width: 200,
+              height: 100}}
+            >
+
+            <Text style={sty.overlayText}>{item.title}</Text>
+            </View>
         );
     }
 
@@ -169,42 +76,53 @@ export default class DataBankApp extends Component {
                 <Carousel
                   ref={(c) => { if (!this.state.slider1Ref) { this.setState({ slider1Ref: c }); } }}
                   data={ENTRIES1}
-                  renderItem={this._renderItemWithParallax}
+                  renderItem={this._renderItem}
                   sliderWidth={sliderWidth}
-                  itemWidth={itemWidth}
+                  itemWidth={200}
                   hasParallaxImages={true}
                   firstItem={SLIDER_1_FIRST_ITEM}
                   inactiveSlideScale={0.94}
-                  inactiveSlideOpacity={0.6}
+                  inactiveSlideOpacity={0.8}
                   enableMomentum={false}
-                  containerCustomStyle={styles.slider}
-                  contentContainerCustomStyle={styles.sliderContentContainer}
                   scrollEndDragDebounceValue={Platform.OS === 'ios' ? 0 : 100}
                   onSnapToItem={(index) => this.setState({ slider1ActiveSlide: index }) }
                 />
-                <Pagination
-                  dotsLength={ENTRIES1.length}
-                  activeDotIndex={slider1ActiveSlide}
-                  containerStyle={styles.paginationContainer}
-                  dotColor={'rgba(255, 255, 255, 0.92)'}
-                  dotStyle={styles.paginationDot}
-                  inactiveDotColor={'#1a1917'}
-                  inactiveDotOpacity={0.4}
-                  inactiveDotScale={0.6}
-                  carouselRef={slider1Ref}
-                  tappableDots={!!slider1Ref}
-                />
+                
             </View>
         );
     }
 
 
+ 
 
+ render() {
 
-    render () {
-        return (
-            <View style={styles.container}>
-         
+    return (
+       <View style={sty.container}>
+              <LinearGradient colors={['#fb5260', '#fb747f']} style={styles.linearGradient}>
+              
+               
+                  <Text style={sty.country}>
+                      INDIA
+                  </Text>
+
+                  <Text style={sty.subtext}>
+                      POPULATION
+                  </Text>
+
+                  <Text style={sty.subtextNumber}>
+                      1.324B
+                  </Text>
+
+                  <Text style={sty.subtextSmallText}>
+                     GDP: $1,709.39                 |                  GNI: $1,680        
+                  </Text>
+              </LinearGradient>
+
+              <View style={{flex:1.4}}>
+
+          
+               <View style={styles.container}>
                 <ScrollView
                   style={styles.scrollview}
                   indicatorStyle={'white'}
@@ -215,44 +133,83 @@ export default class DataBankApp extends Component {
        
                 </ScrollView>
             </View>
-        );
-    }
+
+           
+              </View>
+            </View>
+    );
+  }
 }
 
+const sty = StyleSheet.create({
+
+  linearGradient: {
+    flex: 1,
+    paddingLeft: 15,
+    paddingRight: 15,
+    borderRadius: 5
+  },
+  container: {
+    flex: 1,
+    backgroundColor: '#f2f2f2',
+  },
+  country: {
+    marginTop:20,
+    fontSize: 25,
+    textAlign: 'center',
+    color:'#ffffff',
+    fontFamily:'Montserrat-Regular',
+    letterSpacing: 2,
+
+  },
+
+  overlayText: {
+    fontSize: 20,
+    textAlign: 'center',
+    color:'#666666',
+    fontFamily:'Montserrat-Light',
+    letterSpacing: 2,
 
 
+  },
+  subtext: {
+    marginTop:40,
+    marginBottom:10,
+    fontSize: 14,
+    textAlign: 'center',
+    color:'#ffffff',
+    fontFamily:'Montserrat-Light',
+    letterSpacing: 2,
+  },
+  subtextNumber: {
+    marginTop:-10,
+    fontSize: 35,
+    textAlign: 'center',
+    color:'#ffffff',
+    fontFamily:'Montserrat-Light',
+    letterSpacing: 2,
+  },
+  subtextSmallText: {
+    marginTop:25,
+    marginBottom:10,
+    fontSize: 12,
+    textAlign: 'center',
+    color:'#ffffff',
+    fontFamily:'Montserrat-Light',
+    letterSpacing: 2,
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  },
+  overlay: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0,
+    backgroundColor: 'black',
+    opacity: 0.6
+  }  
+});
+ 
 
 
 

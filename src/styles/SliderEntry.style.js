@@ -26,6 +26,8 @@ export default StyleSheet.create({
     },
     imageContainer: {
         flex: 1,
+                width:300,
+        height:200,
         backgroundColor: 'white',
         borderTopLeftRadius: entryBorderRadius,
         borderTopRightRadius: entryBorderRadius
@@ -34,6 +36,7 @@ export default StyleSheet.create({
         backgroundColor: colors.black
     },
     image: {
+
         resizeMode: 'cover',
         borderRadius: Platform.OS === 'ios' ? entryBorderRadius : 0,
         borderTopLeftRadius: entryBorderRadius,
@@ -73,7 +76,7 @@ export default StyleSheet.create({
         color: 'white'
     },
     subtitle: {
-        marginTop: 6,
+        marginTop: 1,
         color: colors.gray,
         fontSize: 12,
         fontStyle: 'italic'
