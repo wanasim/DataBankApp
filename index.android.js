@@ -12,14 +12,31 @@ import {
   View, 
   Image
 } from 'react-native';
+import Carousel from 'react-native-snap-carousel';
 
 export default class DataBankApp extends Component {
+
+
+  _renderItem ({item, index}) {
+        return (
+            <View style={styles.slide}>
+                <Text style={styles.title}>{ item.title }</Text>
+            </View>
+        );
+    }
+
+
+
+
   render() {
     return (
       <View style={styles.container}>
         <Image
-         style={{width: 411, height: 250}}
-         source={require('./assets/header_background.png')} 
+          style={{flex: 1,
+          alignSelf: 'stretch',
+          width: undefined,
+          height: undefined}}
+          source={require('./assets/header_background.png')} 
          >
             <Text style={styles.country}>
                 INDIA
@@ -32,7 +49,14 @@ export default class DataBankApp extends Component {
             <Text style={styles.subtextNumber}>
                 1.324B
             </Text>
+
+            <Text style={styles.subtextSmallText}>
+               GDP: $1,709.39                 |                  GNI: $1,680        
+            </Text>
         </Image>
+
+        <View style={{flex:1.7}}>
+        </View>
       </View>
     );
   }
@@ -53,26 +77,30 @@ const styles = StyleSheet.create({
 
   },
   subtext: {
-    marginTop:30,
+    marginTop:40,
     fontSize: 14,
     textAlign: 'center',
     color:'#ffffff',
-    fontFamily:'Montserrat-Light',
+    fontFamily:'Montserrat-Medium',
     letterSpacing: 2,
   },
   subtextNumber: {
-    fontSize: 40,
+    marginTop:-10,
+    fontSize: 45,
     textAlign: 'center',
     color:'#ffffff',
     fontFamily:'Montserrat-Bold',
     letterSpacing: 2,
-
   },
-  instructions: {
+  subtextSmallText: {
+    marginTop:25,
+    fontSize: 12,
     textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+    color:'#ffffff',
+    fontFamily:'Montserrat-Medium',
+    letterSpacing: 2,
+
+  }
 });
 
 AppRegistry.registerComponent('DataBankApp', () => DataBankApp);
