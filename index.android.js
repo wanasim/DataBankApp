@@ -57,16 +57,6 @@ export default class DataBankApp extends Component {
         );
     }
 
-    _renderItemWithParallax ({item, index}, parallaxProps) {
-        return (
-            <SliderEntry
-              data={item}
-              even={(index + 1) % 2 === 0}
-              parallax={true}
-              parallaxProps={parallaxProps}
-            />
-        );
-    }
 
     get example1 () {
         const { slider1ActiveSlide, slider1Ref } = this.state;
@@ -82,7 +72,7 @@ export default class DataBankApp extends Component {
                   hasParallaxImages={true}
                   firstItem={SLIDER_1_FIRST_ITEM}
                   inactiveSlideScale={0.94}
-                  inactiveSlideOpacity={0.8}
+                  inactiveSlideOpacity={0.6}
                   enableMomentum={false}
                   scrollEndDragDebounceValue={Platform.OS === 'ios' ? 0 : 100}
                   onSnapToItem={(index) => this.setState({ slider1ActiveSlide: index }) }
@@ -152,6 +142,7 @@ const sty = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f2f2f2',
+
   },
   country: {
     marginTop:20,
