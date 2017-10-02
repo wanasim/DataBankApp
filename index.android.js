@@ -128,7 +128,7 @@ export default class DataBankApp extends Component {
               </View>
               <View style={{flex:3.9}}>
 
-                <LineChart />
+                <LineChart  data= {[2, 3, 5, 7, 11, 13, 17, 19, 23, 29]}/>
               </View>
             </View>
     );

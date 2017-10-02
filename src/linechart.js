@@ -32,7 +32,7 @@ export default class LineChart extends Component {
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(220,220,220,1)",
-                data: [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
+                data:  [${this.props.data}]
             },
             
         ]
@@ -52,10 +52,7 @@ export default class LineChart extends Component {
 </body>
 </html>
   `
-    
-
-
-
+ console.log(htmlTest);
     return ( 
       <WebView 
       source={{html: htmlTest}} 
