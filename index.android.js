@@ -58,6 +58,20 @@ export default class DataBankApp extends Component {
     }
 
 
+    _renderChart(){
+      
+      if(this.state.slider1ActiveSlide == 2){
+         return(
+            <View style={{flex:3.9}}>
+              <LineChart  data= {[2, 3, 5, 7, 11, 13, 17, 19, 23, 29]}/>
+            </View>
+        )
+      }
+
+     
+    }
+
+
     get example1 () {
         const { slider1ActiveSlide, slider1Ref } = this.state;
 
@@ -119,18 +133,21 @@ export default class DataBankApp extends Component {
                   scrollEventThrottle={200}
                   directionalLockEnabled={true}
                 >
-                    { this.example1 }
-       
+
+                    {this.example1}
+                  
                 </ScrollView>
+            </View>        
+          </View>
+
+  
+                {this._renderChart()}
+                
+            
+              <Text style={sty.country}>{this.state.slider1ActiveSlide}</Text>
             </View>
 
-           
-              </View>
-              <View style={{flex:3.9}}>
 
-                <LineChart  data= {[2, 3, 5, 7, 11, 13, 17, 19, 23, 29]}/>
-              </View>
-            </View>
     );
   }
 }
