@@ -5,13 +5,13 @@
 */
 
 import React, { Component } from 'react';
-import { View, ScrollView, Text, StatusBar, Platform, Dimensions,AppRegistry, Image, StyleSheet } from 'react-native';
+import { View, ScrollView, Text, StatusBar, Platform, Dimensions,AppRegistry, Image, StyleSheet, WebView} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 import SliderEntry from './src/components/SliderEntry';
 import { ENTRIES1 } from './src/static/entries';
 import styles from './src/styles/index.style';
-
+import LineChart from './src/linechart';
 
 
 const { width: viewportWidth, height: viewportHeight } = Dimensions.get('window');
@@ -45,7 +45,7 @@ export default class DataBankApp extends Component {
         return (
             <View
               style={{flex: 1,
-                backgroundColor:'#ffffff',
+              backgroundColor:'#ffffff',
               justifyContent: 'center',
               alignItems: 'center',
               width: 200,
@@ -126,6 +126,10 @@ export default class DataBankApp extends Component {
 
            
               </View>
+              <View style={{flex:3.9}}>
+
+                <LineChart />
+              </View>
             </View>
     );
   }
@@ -201,6 +205,11 @@ const sty = StyleSheet.create({
   }  
 });
  
+
+
+
+
+
 
 
 
