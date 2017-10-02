@@ -1,8 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
-*/
 
 import React, { Component } from 'react';
 import { View, ScrollView, Text, StatusBar, Platform, Dimensions,AppRegistry, Image, StyleSheet, WebView} from 'react-native';
@@ -104,8 +99,7 @@ export default class DataBankApp extends Component {
     return (
        <View style={sty.container}>
               <LinearGradient colors={['#fb5260', '#fb747f']} style={styles.linearGradient}>
-              
-               
+            
                   <Text style={sty.country}>
                       INDIA
                   </Text>
@@ -222,13 +216,6 @@ const sty = StyleSheet.create({
   }  
 });
  
-
-
-
-
-
-
-
 
 AppRegistry.registerComponent('DataBankApp', () => DataBankApp);
 
