@@ -27,7 +27,7 @@ const itemHorizontalMargin = wp(2);
 
 const SLIDER_1_FIRST_ITEM = 2;
 const sliderWidth = viewportWidth;
-const itemWidth = slideWidth + itemHorizontalMargin * 1;
+const itemWidth = slideWidth + itemHorizontalMargin * 2;
 
 
 export default class DataBankApp extends Component {
@@ -71,8 +71,8 @@ export default class DataBankApp extends Component {
                   itemWidth={200}
                   hasParallaxImages={true}
                   firstItem={SLIDER_1_FIRST_ITEM}
-                  inactiveSlideScale={0.94}
-                  inactiveSlideOpacity={0.6}
+                  inactiveSlideScale={0.8}
+                  inactiveSlideOpacity={0.5}
                   enableMomentum={false}
                   scrollEndDragDebounceValue={Platform.OS === 'ios' ? 0 : 100}
                   onSnapToItem={(index) => this.setState({ slider1ActiveSlide: index }) }
