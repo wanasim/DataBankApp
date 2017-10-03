@@ -56,7 +56,7 @@ export default class LineChart extends Component {
     return ( 
       <WebView 
       source={{html: htmlTest}} 
-      style={{marginTop: 20}} /> ); 
+      style={{marginTop: 10, height:220}} /> ); 
   } 
 }
 

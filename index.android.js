@@ -7,6 +7,8 @@ import SliderEntry from './src/components/SliderEntry';
 import { ENTRIES1 } from './src/static/entries';
 import styles from './src/styles/index.style';
 import LineChart from './src/linechart';
+import DoghnutChart from './src/doughnut';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 
 const { width: viewportWidth, height: viewportHeight } = Dimensions.get('window');
@@ -53,18 +55,30 @@ export default class DataBankApp extends Component {
     }
 
 
-    _renderChart(){
+    _renderLineChart(){
       
       if(this.state.slider1ActiveSlide == 2){
          return(
-            <View style={{flex:3.9}}>
+            <View style={{flex:3}}>
               <LineChart  data= {[2, 3, 5, 7, 11, 13, 17, 19, 23, 29]}/>
             </View>
         )
       }
+    }
+
+      _renderDoughnutChart(){
+      
+      if(this.state.slider1ActiveSlide == 2){
+         return(
+            <View style={{flex:3}}>
+              <DoghnutChart />
+            </View>
+        )
+      }
+      }
 
      
-    }
+    
 
 
     get example1 () {
@@ -97,8 +111,8 @@ export default class DataBankApp extends Component {
  render() {
 
     return (
-       <View style={sty.container}>
-              <LinearGradient colors={['#fb5260', '#fb747f']} style={styles.linearGradient}>
+       <ScrollView style={sty.container}>
+              <LinearGradient colors={['#ff512f', '#dd2476']} style={styles.linearGradient}>
             
                   <Text style={sty.country}>
                       INDIA
@@ -117,7 +131,7 @@ export default class DataBankApp extends Component {
                   </Text>
               </LinearGradient>
 
-              <View style={{flex:1.4}}>
+              <View style={{flex:1}}>
 
           
                <View style={styles.container}>
@@ -134,12 +148,21 @@ export default class DataBankApp extends Component {
             </View>        
           </View>
 
-  
-                {this._renderChart()}
+
+
+
+
+                <Text style={sty.chartTitle}><Icon name="ios-stats" size={20} color="#FB5260" />  Population Growth by Year</Text>
+                {this._renderLineChart()}
                 
             
-              <Text style={sty.country}>{this.state.slider1ActiveSlide}</Text>
-            </View>
+              <Text style={sty.chartTitle}><Icon name="ios-stats" size={20} color="#FB5260" />  Educational Attainment</Text>
+              {this._renderDoughnutChart()}
+
+           
+
+
+            </ScrollView>
 
 
     );
@@ -154,9 +177,14 @@ const sty = StyleSheet.create({
     paddingRight: 15,
     borderRadius: 5
   },
+  columnedItems:{
+     flexDirection:'row',
+     justifyContent: 'space-between',
+
+  },
   container: {
     flex: 1,
-    backgroundColor: '#f2f2f2',
+    backgroundColor: '#f5f5f5',
 
   },
   country: {
@@ -169,10 +197,21 @@ const sty = StyleSheet.create({
 
   },
 
+  chartTitle: {
+    marginTop:20,
+    marginBottom:10,
+    marginLeft:10,
+    fontSize: 15,
+    color:'#292929',
+    fontFamily:'Montserrat-Regular',
+    letterSpacing: 2,
+
+  },
+
   overlayText: {
     fontSize: 20,
     textAlign: 'center',
-    color:'#666666',
+    color:'#FB5260',
     fontFamily:'Montserrat-Light',
     letterSpacing: 2,
 
@@ -205,15 +244,7 @@ const sty = StyleSheet.create({
     letterSpacing: 2,
 
   },
-  overlay: {
-    position: 'absolute',
-    top: 0,
-    right: 0,
-    bottom: 0,
-    left: 0,
-    backgroundColor: 'black',
-    opacity: 0.6
-  }  
+
 });
  
 
