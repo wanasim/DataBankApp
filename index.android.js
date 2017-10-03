@@ -8,6 +8,8 @@ import { ENTRIES1 } from './src/static/entries';
 import styles from './src/styles/index.style';
 import LineChart from './src/linechart';
 import DoghnutChart from './src/doughnut';
+import BarChart from './src/barchart';
+
 import Icon from 'react-native-vector-icons/Ionicons';
 
 
@@ -66,8 +68,7 @@ export default class DataBankApp extends Component {
       }
     }
 
-      _renderDoughnutChart(){
-      
+    _renderDoughnutChart(){
       if(this.state.slider1ActiveSlide == 2){
          return(
             <View style={{flex:3}}>
@@ -75,7 +76,17 @@ export default class DataBankApp extends Component {
             </View>
         )
       }
+    }
+
+    _renderBarChart(){
+      if(this.state.slider1ActiveSlide == 2){
+         return(
+            <View style={{flex:3}}>
+              <BarChart />
+            </View>
+        )
       }
+    }
 
      
     
@@ -149,16 +160,16 @@ export default class DataBankApp extends Component {
           </View>
 
 
-
-
-
-                <Text style={sty.chartTitle}><Icon name="ios-stats" size={20} color="#FB5260" />  Population Growth by Year</Text>
-                {this._renderLineChart()}
+              <Text style={sty.chartTitle}><Icon name="ios-stats" size={20} color="#FB5260" />  Population Growth by Year</Text>
+              {this._renderLineChart()}
                 
             
               <Text style={sty.chartTitle}><Icon name="ios-stats" size={20} color="#FB5260" />  Educational Attainment</Text>
               {this._renderDoughnutChart()}
 
+
+              <Text style={sty.chartTitle}><Icon name="ios-stats" size={20} color="#FB5260" />  Progression to Secondary School</Text>
+              {this._renderBarChart()}
            
 
 
