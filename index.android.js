@@ -9,7 +9,7 @@ import styles from './src/styles/index.style';
 import LineChart from './src/linechart';
 import DoghnutChart from './src/doughnut';
 import BarChart from './src/barchart';
-
+import PolarArea from './src/polararea';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 
@@ -83,6 +83,17 @@ export default class DataBankApp extends Component {
          return(
             <View style={{flex:3}}>
               <BarChart />
+            </View>
+        )
+      }
+    }
+
+
+    _renderPolarArea(){
+      if(this.state.slider1ActiveSlide == 2){
+         return(
+            <View style={{flex:3}}>
+              <PolarArea />
             </View>
         )
       }
@@ -171,6 +182,9 @@ export default class DataBankApp extends Component {
               <Text style={sty.chartTitle}><Icon name="ios-stats" size={20} color="#FB5260" />  Progression to Secondary School</Text>
               {this._renderBarChart()}
            
+
+              <Text style={sty.chartTitle}><Icon name="ios-stats" size={20} color="#FB5260" />  Some Random School Data</Text>
+              {this._renderPolarArea()}
 
 
             </ScrollView>
