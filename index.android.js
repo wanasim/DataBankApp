@@ -59,43 +59,158 @@ export default class DataBankApp extends Component {
 
     _renderLineChart(){
       
-      if(this.state.slider1ActiveSlide == 2){
-         return(
+
+
+      switch(this.state.slider1ActiveSlide){
+        case 0:
+          return(
+            <View style={{flex:3}}>
+            <Text style={sty.chartTitle}><Icon name="ios-stats" size={20} color="#FB5260" />  Population Growth by Year</Text>
+              <LineChart  data= {[2, 3, 5, 7, 11, 13, 17, 19, 23, 29]}/>
+            </View>
+          )
+          break;
+
+        case 1:
+          return(
+            <View style={{flex:3}}>
+            <Text style={sty.chartTitle}><Icon name="ios-stats" size={20} color="#FB5260" />  Population Growth by Year</Text>
+              <LineChart  data= {[2, 3, 5, 7, 11, 13, 17, 19, 23, 29]}/>
+            </View>
+          )
+          break;
+
+        case 3:
+          return(
             <View style={{flex:3}}>
               <LineChart  data= {[2, 3, 5, 7, 11, 13, 17, 19, 23, 29]}/>
             </View>
-        )
+          )
+          break;
+
+        case 5:
+          return(
+            <View style={{flex:3}}>
+              <LineChart  data= {[2, 3, 5, 7, 11, 13, 17, 19, 23, 29]}/>
+            </View>
+          )
+          break;
+
       }
     }
 
     _renderDoughnutChart(){
-      if(this.state.slider1ActiveSlide == 2){
-         return(
-            <View style={{flex:3}}>
-              <DoghnutChart />
-            </View>
-        )
+      switch(this.state.slider1ActiveSlide ){
+         
+        case 0:
+           return(
+              <View style={{flex:3}}>
+                <DoghnutChart />
+             </View>
+          )
+          break;
+
+
+        case 2:
+           return(
+              <View style={{flex:3}}>
+                <DoghnutChart />
+             </View>
+          )
+          break;
+
+          case 4:
+           return(
+              <View style={{flex:3}}>
+                <DoghnutChart />
+             </View>
+          )
+          break;
+
+          case 6:
+           return(
+              <View style={{flex:3}}>
+                <DoghnutChart />
+             </View>
+          )
+          break;
       }
     }
 
     _renderBarChart(){
-      if(this.state.slider1ActiveSlide == 2){
-         return(
+      switch(this.state.slider1ActiveSlide){
+          
+        
+        case 0:
+          return(
             <View style={{flex:3}}>
               <BarChart />
             </View>
-        )
+          )
+          break;
+
+        case 1:
+          return(
+            <View style={{flex:3}}>
+              <BarChart />
+            </View>
+          )
+          break;
+
+        case 3:
+          return(
+            <View style={{flex:3}}>
+              <BarChart />
+            </View>
+          )
+          break;
+
+        case 5:
+          return(
+            <View style={{flex:3}}>
+              <BarChart />
+            </View>
+          )
+          break;
       }
     }
 
 
     _renderPolarArea(){
-      if(this.state.slider1ActiveSlide == 2){
-         return(
-            <View style={{flex:3}}>
-              <PolarArea />
-            </View>
-        )
+      switch(this.state.slider1ActiveSlide){
+         
+        case 0:
+          return(
+              <View style={{flex:3}}>
+               <PolarArea />
+              </View>
+          )
+          break;
+
+
+         case 2:
+          return(
+              <View style={{flex:3}}>
+               <PolarArea />
+              </View>
+          )
+          break;
+          
+          case 4:
+          return(
+              <View style={{flex:3}}>
+               <PolarArea />
+              </View>
+          )
+          break;
+
+          case 6:
+          return(
+              <View style={{flex:3}}>
+               <PolarArea />
+              </View>
+          )
+          break;
       }
     }
 
