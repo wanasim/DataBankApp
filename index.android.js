@@ -83,6 +83,7 @@ export default class DataBankApp extends Component {
         case 3:
           return(
             <View style={{flex:3}}>
+              <Text style={sty.chartTitle}><Icon name="ios-stats" size={20} color="#FB5260" />  Population Growth by Year</Text>
               <LineChart  data= {[2, 3, 5, 7, 11, 13, 17, 19, 23, 29]}/>
             </View>
           )
@@ -91,6 +92,7 @@ export default class DataBankApp extends Component {
         case 5:
           return(
             <View style={{flex:3}}>
+              <Text style={sty.chartTitle}><Icon name="ios-stats" size={20} color="#FB5260" />  Population Growth by Year</Text>
               <LineChart  data= {[2, 3, 5, 7, 11, 13, 17, 19, 23, 29]}/>
             </View>
           )
@@ -105,6 +107,7 @@ export default class DataBankApp extends Component {
         case 0:
            return(
               <View style={{flex:3}}>
+              <Text style={sty.chartTitle}><Icon name="ios-stats" size={20} color="#FB5260" />  Population Growth by Year</Text>
                 <DoghnutChart />
              </View>
           )
@@ -114,6 +117,7 @@ export default class DataBankApp extends Component {
         case 2:
            return(
               <View style={{flex:3}}>
+              <Text style={sty.chartTitle}><Icon name="ios-stats" size={20} color="#FB5260" />  Population Growth by Year</Text>
                 <DoghnutChart />
              </View>
           )
@@ -122,6 +126,7 @@ export default class DataBankApp extends Component {
           case 4:
            return(
               <View style={{flex:3}}>
+              <Text style={sty.chartTitle}><Icon name="ios-stats" size={20} color="#FB5260" />  Population Growth by Year</Text>
                 <DoghnutChart />
              </View>
           )
@@ -130,6 +135,7 @@ export default class DataBankApp extends Component {
           case 6:
            return(
               <View style={{flex:3}}>
+              <Text style={sty.chartTitle}><Icon name="ios-stats" size={20} color="#FB5260" />  Population Growth by Year</Text>
                 <DoghnutChart />
              </View>
           )
@@ -144,6 +150,7 @@ export default class DataBankApp extends Component {
         case 0:
           return(
             <View style={{flex:3}}>
+            <Text style={sty.chartTitle}><Icon name="ios-stats" size={20} color="#FB5260" />  Population Growth by Year</Text>
               <BarChart />
             </View>
           )
@@ -152,6 +159,7 @@ export default class DataBankApp extends Component {
         case 1:
           return(
             <View style={{flex:3}}>
+            <Text style={sty.chartTitle}><Icon name="ios-stats" size={20} color="#FB5260" />  Population Growth by Year</Text>
               <BarChart />
             </View>
           )
@@ -160,6 +168,7 @@ export default class DataBankApp extends Component {
         case 3:
           return(
             <View style={{flex:3}}>
+            <Text style={sty.chartTitle}><Icon name="ios-stats" size={20} color="#FB5260" />  Population Growth by Year</Text>
               <BarChart />
             </View>
           )
@@ -168,6 +177,7 @@ export default class DataBankApp extends Component {
         case 5:
           return(
             <View style={{flex:3}}>
+            <Text style={sty.chartTitle}><Icon name="ios-stats" size={20} color="#FB5260" />  Population Growth by Year</Text>
               <BarChart />
             </View>
           )
@@ -182,6 +192,7 @@ export default class DataBankApp extends Component {
         case 0:
           return(
               <View style={{flex:3}}>
+              <Text style={sty.chartTitle}><Icon name="ios-stats" size={20} color="#FB5260" />  Population Growth by Year</Text>
                <PolarArea />
               </View>
           )
@@ -191,6 +202,7 @@ export default class DataBankApp extends Component {
          case 2:
           return(
               <View style={{flex:3}}>
+              <Text style={sty.chartTitle}><Icon name="ios-stats" size={20} color="#FB5260" />  Population Growth by Year</Text>
                <PolarArea />
               </View>
           )
@@ -199,6 +211,7 @@ export default class DataBankApp extends Component {
           case 4:
           return(
               <View style={{flex:3}}>
+              <Text style={sty.chartTitle}><Icon name="ios-stats" size={20} color="#FB5260" />  Population Growth by Year</Text>
                <PolarArea />
               </View>
           )
@@ -207,6 +220,7 @@ export default class DataBankApp extends Component {
           case 6:
           return(
               <View style={{flex:3}}>
+              <Text style={sty.chartTitle}><Icon name="ios-stats" size={20} color="#FB5260" />  Population Growth by Year</Text>
                <PolarArea />
               </View>
           )
@@ -286,19 +300,12 @@ export default class DataBankApp extends Component {
           </View>
 
 
-              <Text style={sty.chartTitle}><Icon name="ios-stats" size={20} color="#FB5260" />  Population Growth by Year</Text>
               {this._renderLineChart()}
-                
             
-              <Text style={sty.chartTitle}><Icon name="ios-stats" size={20} color="#FB5260" />  Educational Attainment</Text>
               {this._renderDoughnutChart()}
 
-
-              <Text style={sty.chartTitle}><Icon name="ios-stats" size={20} color="#FB5260" />  Progression to Secondary School</Text>
               {this._renderBarChart()}
            
-
-              <Text style={sty.chartTitle}><Icon name="ios-stats" size={20} color="#FB5260" />  Some Random School Data</Text>
               {this._renderPolarArea()}
 
 
