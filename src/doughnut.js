@@ -15,7 +15,7 @@ export default class DoghnutChart extends Component {
   <div class="container">
 
   <div>
-    <canvas id="myChart"></canvas>
+    <canvas id="myChart" ></canvas>
   </div>
 </div>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js'></script>

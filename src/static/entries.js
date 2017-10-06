@@ -2,32 +2,32 @@ export const ENTRIES1 = [
     {
         title: 'AGRICULTURE',
         subtitle: 'Lorem ipsum dolor sit amet et nuncat mergitur',
-        illustration: 'http://i.imgur.com/UYiroysl.jpg'
+        illustration: 'ios-nutrition-outline'
     },
     {
         title: 'ECONOMY',
         subtitle: 'Lorem ipsum dolor sit amet',
-        illustration: 'http://i.imgur.com/UPrs1EWl.jpg'
+        illustration: 'ios-cash-outline'
     },
     {
         title: 'EDUCATION',
         subtitle: 'Lorem ipsum dolor sit amet et nuncat ',
-        illustration: 'http://i.imgur.com/MABUbpDl.jpg'
+        illustration: 'ios-school-outline'
     },
     {
         title: 'ENVIRONMENT',
         subtitle: 'Lorem ipsum dolor sit amet et nuncat mergitur',
-        illustration: 'http://i.imgur.com/KZsmUi2l.jpg'
+        illustration: 'ios-leaf-outline'
     },
     {
         title: 'HEALTH',
         subtitle: 'Lorem ipsum dolor sit amet',
-        illustration: 'http://i.imgur.com/2nCt3Sbl.jpg'
+        illustration: 'ios-pulse-outline'
     },
     {
         title: 'INFRASTRUCTURE',
         subtitle: 'Lorem ipsum dolor sit amet',
-        illustration: 'http://i.imgur.com/lceHsT6l.jpg'
+        illustration: 'ios-plane-outline'
     }
 ];
 

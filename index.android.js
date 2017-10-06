@@ -51,7 +51,9 @@ export default class DataBankApp extends Component {
               height: 100}}
             >
 
+            <Icon name={item.illustration} size={50} color="#FB5260" /> 
             <Text style={sty.overlayText}>{item.title}</Text>
+          
             </View>
         );
     }
@@ -245,8 +247,8 @@ export default class DataBankApp extends Component {
                   itemWidth={200}
                   hasParallaxImages={true}
                   firstItem={SLIDER_1_FIRST_ITEM}
-                  inactiveSlideScale={0.8}
-                  inactiveSlideOpacity={0.5}
+                  inactiveSlideScale={0.7}
+                  inactiveSlideOpacity={0.4}
                   enableMomentum={false}
                   scrollEndDragDebounceValue={Platform.OS === 'ios' ? 0 : 100}
                   onSnapToItem={(index) => this.setState({ slider1ActiveSlide: index }) }
@@ -356,10 +358,10 @@ const sty = StyleSheet.create({
   },
 
   overlayText: {
-    fontSize: 20,
+    fontSize: 15,
     textAlign: 'center',
     color:'#FB5260',
-    fontFamily:'Montserrat-Light',
+    fontFamily:'Montserrat-Bold',
     letterSpacing: 2,
 
 
